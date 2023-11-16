@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, intial-scale=1.0">
+  <title>Evoil Brasil</title>
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <script type="text/javascript" src="js/instafeed.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <meta name="description" content="JOE'S NO FLATS o melhor selante do mundo.">
+  <meta name="keywords" content="selante, lubrificante, limpadores, desengraxantes, joes no flats">
+  <meta name="author" content="Joes No Flats Brasil">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <script src="js/owl.carousel.min.js"></script>
+
+</head>
+
+<body>
+  <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5599111112222" target="_blank">
+    <i class="fab fa-whatsapp" id="btnwpp"></i>
+  </a>
+
+  <!-- HEADER AND NAV -->
+  <header>
+    <a href="home.html" class="logo"><img src="assets/logo.png"></a>
+    <div class="menu-btn">
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="product-greases.html">Graxas</a>
+          <a href="product-cleaners.html">Limpeza</a>
+          <a href="product-lubs.html">Lubrificantes</a>
+          <a href="product-manutencao.html">Oficina</a>
+          <a href="product-others.html">Acessórios</a>
+          <a href="about.html">Sobre</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <img decoding="async" class="img-slide active" src="assets/P2000.jpg">
+    <img decoding="async" class="img-slide" src="assets/GRAXA P1000.jpg">
+    <img decoding="async" class="img-slide" src="assets/DESENGRAXANTE.jpg">
+    <img decoding="async" class="img-slide" src="assets/OLEO HIDRAULICO .jpg">
+    <img decoding="async" class="img-slide" src="assets/FORK OIL .jpg">
+    <img decoding="async" class="img-slide" src="assets/lubrificantes .jpg">
+    <img decoding="async" class="img-slide" src="assets/SUPER WASH.jpg .jpg">
+
+    <div class="media-icons">
+      <a href="https://www.facebook.com/evoilbrasil" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/evoilbrasil/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://web.whatsapp.com/send?phone=5512997154214"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      var mediaicons = document.querySelector(".media-icons")
+      header.classList.toggle("sticky", window.scrollY > 0)
+      mediaicons.classList.toggle("sticky", window.scrollY > 0)
+    })
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".img-slide");
+    const contents = document.querySelectorAll(".content");
+    let currentSlide = 0;
+    let interval;
+
+    var sliderNav = function (manual) {
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+      currentSlide = manual;
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        clearInterval(interval); // Para o autoplay quando um botão for clicado
+        sliderNav(i);
+        startAutoplay(); // Reinicia o autoplay após o clique
+      });
+    });
+
+    function startAutoplay() {
+      interval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % btns.length;
+        sliderNav(currentSlide);
+      }, 8000); // Troca de slide a cada 3 segundos (ajuste conforme necessário)
+    }
+
+    startAutoplay(); // Inicie o autoplay quando a página carregar
+
+  </script>
+  <section style="background-color:#050505; min-height: 80vh; padding: 70px 140px;">
+    <div class="destaques">
+      <h3>
+        CATEGORIAS
+      </h3>
+      <!--image row start-->
+      <div class="row">
+        <!--image card start-->
+        <!--image card end-->
+        <!--image card start-->
+        <a class="image" href="product-greases.html">
+          <img src="assets/graxas.jpeg" alt="">
+        </a>
+        <!--image card end-->
+        <!--image card start-->
+        <a class="image" href="product-lubs.html">
+          <img src="assets/lub.jpeg" alt="dsads">
+        </a>
+        <!--image card end-->
+
+        <!--image row end-->
+        <!--image row start-->
+        <!--image card start-->
+        <a class="image" href="product-cleaners.html">
+          <img src="assets/limpeza.jpeg" alt="">
+        </a>
+        <!--image card end-->
+        <!--image card start-->
+        <a class="image" href="product-manutencao.html">
+          <img src="assets/oficina.jpeg" alt="">
+        </a>
+
+        <!--image card end-->
+        <!--image card start-->
+      </div>
+  </section>
+  <section class="instafeed"
+    style="background-color: #050505; display: block; padding: none; border-top: 1px solid #fff;   width: 100%;">
+    <div class="title">
+      <h1 style="    padding: 60px 30px;
+      font-size: 2.2em;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-align: center;"><a style="color: #4eff00;text-decoration: none;"
+          href="https://www.instagram.com/evoilbrasil/" target="_blank"><i class="fab fa-instagram"
+            style="margin-right: 10px; "></i>EVOILBRASIL</h1></a>
+    </div>
+    <div id="instafeed" class="owl-carousel owl-theme owl-loaded owl-drag">
+
+    </div>
+
+  </section>
+
+  <div class="section-container">
+    <a href="product-greases.html" class="columns bg" style="background-image:url('assets/home.png')">
+      &nbsp;
+    </a>
+    <div class="columns content">
+      <div class="content-container">
+        <h5>P2000, a mais vendida.:</h5>
+        <p>
+          <strong>Alguns dos motivos que torna a P2000 a mais vendida:</strong>
+          <br>
+          <br> - Potências adesivas extremamente altas.
+          <br> - Alta resistência à água, bem como emulsões da área de usinagem.
+          <br> - Comportamento neutro contra muitos materiais entre os materiais de vedação e plástico.
+          <br> - Redução do atrito.
+          <br> - Alta resistência à oxidação e, portanto, adequado para intervalos prolongados de relubrificação.
+          <br> - Alta estabilidade mecânica e resistência do filme de lubrificação.
+          <br> <strong> - Melhor custo benefício do mercado.</strong>
+
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="section-container">
+    <div class="columns content">
+      <div class="content-container">
+        <h5>Tecnolgia Nano nos Lubrificantes;</h5>
+        <p>
+          <strong>Desperte o Poder da Performance com Nossos Lubrificantes Especializados: Dry, PTFE e Wet!</strong>
+          <br><br>
+          Se você é um ciclista que busca o máximo desempenho, sabe que a escolha do lubrificante certo faz toda a
+          diferença. Apresentamos nossa linha exclusiva de lubrificantes, cada um projetado para atender às demandas
+          específicas do seu estilo de pedalada.
+          <br><br>
+          <Strong>Lubrificante Dry:</Strong>
+          Transforme seus passeios sob o sol com nosso lubrificante Dry de última geração. Formulado para condições
+          secas, este lubrificante oferece uma camada de proteção contra poeira e sujeira, mantendo sua corrente suave e
+          eficiente. Desfrute de uma pedalada livre de atritos, prolongando a vida útil da sua transmissão.
+          <br><br>
+          <Strong>Lubrificante PTFE:</Strong>
+          Elevamos a experiência de lubrificação com nossa fórmula avançada de Politetrafluoretileno (PTFE). Este
+          lubrificante reduz o atrito ao máximo, proporcionando uma eficiência excepcional da corrente. Sua composição
+          duradoura e resistente à água garante um desempenho suave mesmo em condições adversas. Prepare-se para uma
+          pedalada sem igual.
+          <br><br>
+          <Strong>Lubrificante Wet:</Strong>
+          Enfrente os desafios da chuva e lama com confiança, graças ao nosso lubrificante Wet de alta aderência.
+          Desenvolvido para condições úmidas, este lubrificante mantém a corrente protegida contra a água, lama e
+          detritos, garantindo um funcionamento contínuo da transmissão. Não deixe que o clima impeça sua paixão pela
+          pedalada.
+        </p>
+      </div>
+    </div>
+    <a href="product-lubs.html" class="columns bg" style="background-image:url('assets/home1.jpeg')">
+      &nbsp;
+    </a>
+  </div>
+  <div class="section-container">
+    <a href="product-cleaners.html" class="columns bg" style="background-image:url('assets/home3.jpeg')">
+      &nbsp;
+    </a>
+    <div class="columns content">
+      <div class="content-container">
+        <h5>Produtos Premium</h5>
+        <p>
+          <STRONG>Descubra a Excelência em Manutenção com Nossos Produtos de Alta Performance!
+          </STRONG>
+          <BR><BR>
+          Se você é apaixonado por aventuras off-road ou um entusiasta do ciclismo que busca o máximo desempenho, temos
+          a solução perfeita para otimizar o desempenho da sua máquina: nossos produtos especializados. Com uma
+          reputação sólida e anos de expertise na indústria, oferecemos uma gama de produtos que garantem a longevidade
+          e a eficiência dos seus equipamentos.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    var feed = new Instafeed({
+      accessToken: 'IGQWRNQjdQNU9UaFF5a2lnb25QSEVnM1B5M2tURXFUMDJ2WnlVci1WeFB3YjVGdFpobVFtWXNZAT2lEdjhkYVAwUWRMYVlWRUxFX2sxTFY4U0lIdG8tMGgyd1lOakJpd0ppRWpTSjhrUDdEV1R2MWYwOTNDTEZAJRkkZD',
+      limit: 8,
+      template: '<div class="item"><a href="{{link}}" target="_blank"><img title="{{caption}}" src="{{image}}" /></a></div>',
+
+      after: function () {
+
+        $('.owl-carousel').owlCarousel({
+          loop: true,
+          margin: 10,
+          nav: false,
+          limit: 10,
+          responsiveClass: true,
+          responsive: {
+            0: {
+              items: 4
+
+            },
+            600: {
+              items: 5
+
+            },
+            1000: {
+              items: 5,
+              loop: true
+            }
+          }
+        });
+      }
+    });
+
+
+    feed.run();
+
+  </script>
+
+  <script type="text/javascript">
+    window.addEventListener('scroll', reveal);
+
+    function reveal() {
+      var reveals = document.querySelectorAll('.reveal');
+
+      for (var i = 0; i < reveals.length; i++) {
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if (revealtop < windowheight - revealpoint) {
+          reveals[i].classList.add('active');
+        }
+        else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+  </script>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a href="home.html">Home</a>
+        |
+        <a href="about.html">Sobre nós</a>
+        |
+      </p>
+      <img src="assets/logo.png" style="width: 200px; height: auto; margin-bottom: 2.5vh; margin-left: 6vh;" alt="">
+      <p class="footer-company-name">CNPJ: <strong>21.568.863/0001-30</strong></p>
+    </div>
+
+    <div class="footer-center">
+      <span>Contato</span>
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <p><a href="https://maps.app.goo.gl/pDEp8p8Ey8i1rA2K9">Rua Astrogildo Machado, 520<br>
+            Monte Castelo <br> São José dos Campos - SP</p></a>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>(12) 99715-4214</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:vendas@evoil.com.br">vendas@evoil.com.br</a></p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        <strong>EVOIL BRASIL</strong> faça parte da evolução.
+      </p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/joesnoflatsbrasil" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/joesnoflatsbrasil/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.whatsapp.com/send?phone=5512997154214"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
