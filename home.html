@@ -25,25 +25,39 @@
 </head>
 
 <body>
-  <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5599111112222" target="_blank">
+  <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=5512997154214" target="_blank">
     <i class="fab fa-whatsapp" id="btnwpp"></i>
   </a>
 
   <!-- HEADER AND NAV -->
   <header>
     <a href="home.html" class="logo"><img src="assets/logo.png"></a>
-    <div class="menu-btn">
-      <div class="navigation">
-        <div class="navigation-items">
-          <a href="product-greases.html">Graxas</a>
-          <a href="product-cleaners.html">Limpeza</a>
-          <a href="product-lubs.html">Lubrificantes</a>
-          <a href="product-manutencao.html">Oficina</a>
-          <a href="product-others.html">Acessórios</a>
-          <a href="about.html">Sobre</a>
-        </div>
-      </div>
+
+    <div class="navigation">
+
+      <ul class="menu">
+        <div class="close-btn"></div>
+        <li class="menu-item"><a href="/about.html">Garrafas</a></li>
+
+        <li class="menu-item">
+          <a class="sub-btn">Vestuário<i class="fas fa-angle-down" style="margin-left: 5px;"></i></a>
+          <ul class="sub-menu">
+            <li class="sub-item"><a href="product-selants.html">Selantes</a></li>
+            <li class="sub-item"><a href="product-lubs.html">Lubrificantes</a></li>
+            <li class="sub-item"><a href="product-cleaners.html">Limpeza</a></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a class="sub-btn">Acessórios<i class="fas fa-angle-down" style="margin-left: 5px;"></i></a>
+          <ul class="sub-menu">
+            <li class="sub-item"><a href="product-selants.html">Manoplas</a></li>
+            <li class="sub-item"><a href="product-lubs.html">Suportes</a></li>
+            <li class="sub-item"><a href="product-cleaners.html">Limpeza</a></li>
+          </ul>
+        </li>
+        
     </div>
+    <div class="menu-btn"></div>
   </header>
 
   <section class="home">
@@ -56,8 +70,9 @@
     <img decoding="async" class="img-slide" src="assets/SUPER WASH.jpg .jpg">
 
     <div class="media-icons">
-      <a href="https://www.facebook.com/evoilbrasil" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/evoilbrasil/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100083401393944" target="_blank"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/blackmountainbrasil" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://web.whatsapp.com/send?phone=5512997154214"><i class="fab fa-whatsapp"></i></a>
     </div>
     <div class="slider-navigation">
@@ -69,12 +84,35 @@
     </div>
   </section>
   <script type="text/javascript">
-    const menuBtn = document.querySelector(".menu-btn");
-    const navigation = document.querySelector(".navigation");
+    $(document).ready(function () {
+      //toggle sub-menus
+      $(".sub-btn").click(function () {
+        $(this).next(".sub-menu").slideToggle();
+      });
+
+      //toggle more-menus
+      $(".more-btn").click(function () {
+        $(this).next(".more-menu").slideToggle();
+      });
+    });
+
+    //javascript for the responsive navigation menu
+    var menu = document.querySelector(".menu");
+    var menuBtn = document.querySelector(".menu-btn");
+    var closeBtn = document.querySelector(".close-btn");
 
     menuBtn.addEventListener("click", () => {
-      menuBtn.classList.toggle("active");
-      navigation.classList.toggle("active");
+      menu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+
+    //javascript for the navigation bar effects on scroll
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
     });
 
     window.addEventListener("scroll", function () {
@@ -127,7 +165,7 @@
     startAutoplay(); // Inicie o autoplay quando a página carregar
 
   </script>
-  <section style="background-color:#050505; min-height: 80vh; padding: 70px 140px;">
+  <section style="background-color:#fff; min-height: 80vh; padding: 70px 140px;">
     <div class="destaques">
       <h3>
         CATEGORIAS
@@ -164,15 +202,15 @@
       </div>
   </section>
   <section class="instafeed"
-    style="background-color: #050505; display: block; padding: none; border-top: 1px solid #fff;   width: 100%;">
+    style="background-color: #fff; display: block; padding: none; border-top: 1px solid #fff;   width: 100%;">
     <div class="title">
       <h1 style="    padding: 60px 30px;
       font-size: 2.2em;
       font-weight: 900;
       letter-spacing: 1px;
-      text-align: center;"><a style="color: #4eff00;text-decoration: none;"
-          href="https://www.instagram.com/evoilbrasil/" target="_blank"><i class="fab fa-instagram"
-            style="margin-right: 10px; "></i>EVOILBRASIL</h1></a>
+      text-align: center;"><a style="color: #000;text-decoration: none;"
+          href="https://www.instagram.com/blackmountainbrasil/" target="_blank"><i class="fab fa-instagram"
+            style="margin-right: 10px; "></i>BLACKMOUNTAINBRASIL</h1></a>
     </div>
     <div id="instafeed" class="owl-carousel owl-theme owl-loaded owl-drag">
 
@@ -260,7 +298,7 @@
 
   <script type="text/javascript">
     var feed = new Instafeed({
-      accessToken: 'IGQWRNQjdQNU9UaFF5a2lnb25QSEVnM1B5M2tURXFUMDJ2WnlVci1WeFB3YjVGdFpobVFtWXNZAT2lEdjhkYVAwUWRMYVlWRUxFX2sxTFY4U0lIdG8tMGgyd1lOakJpd0ppRWpTSjhrUDdEV1R2MWYwOTNDTEZAJRkkZD',
+      accessToken: 'IGQWRPTXFaNGltX0s1RmdyYkd1RGhzZAV9NRDcwZA2RnS3prV19wdVFNUHdWRzBQLUlFTHZATcGlnXy1qbzZAkOU9lZAndud2x3Qk1VSTVYQVJEQmg2MVFSLVhTeVNfY3BDVDExXzY2UTdLTlVtbF9OZAF9OV2xGTmlsRG8ZD',
       limit: 8,
       template: '<div class="item"><a href="{{link}}" target="_blank"><img title="{{caption}}" src="{{image}}" /></a></div>',
 
@@ -357,8 +395,10 @@
         <strong>EVOIL BRASIL</strong> faça parte da evolução.
       </p>
       <div class="footer-icons">
-        <a href="https://www.facebook.com/joesnoflatsbrasil" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/joesnoflatsbrasil/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100083401393944" target="_blank"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/blackmountainflatsbrasil/" target="_blank"><i
+            class="fab fa-instagram"></i></a>
         <a href="https://web.whatsapp.com/send?phone=5512997154214"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
